@@ -23,8 +23,8 @@ document.querySelectorAll('.confirm-add').forEach(button => {
           <div class="card-footer">
             <div class="avatar">U</div>
             <div class="icons">
-              <span>Edit</span>
-              <span>Move</span>
+              <span class="edit">Edit</span>
+              <span class="delete">Delete</span>
             </div>
           </div>
         `;
@@ -33,4 +33,28 @@ document.querySelectorAll('.confirm-add').forEach(button => {
             if (emptyState) emptyState.style.display = 'none';
         }
     });
+
+
+
+});
+
+// Event delegation for delete buttons with confirmation
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('delete')) {
+        const card = e.target.closest('.card');
+        const taskList = card.parentElement;
+
+        const confirmed = confirm("Are you sure you want to delete this task?");
+        if (confirmed) {
+            card.remove();
+
+            // Show empty state if no tasks left
+            if (taskList.querySelectorAll('.card').length === 0) {
+                const emptyState = document.createElement('p');
+                emptyState.className = 'empty-state';
+                emptyState.textContent = 'No tasks yet.';
+                taskList.appendChild(emptyState);
+            }
+        }
+    }
 });
