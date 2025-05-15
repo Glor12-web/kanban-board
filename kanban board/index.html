@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Kanban Board</title>
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">Kanbanly</div>
+    </header>
+
+    <main class="board">
+        <!-- Column: To Do -->
+        <div class="column">
+            <h2>To Do</h2>
+            <div class="task-list">
+                <div class="card">
+                    <h3>Example Task</h3>
+                    <p>Description goes here</p>
+                    <div class="card-footer">
+                        <div class="avatar">A</div>
+                        <div class="icons">
+                            <span>Edit</span>
+                            <span>Move</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="add-card-form hidden">
+                <input type="text" placeholder="Enter task..." class="new-task-input" />
+                <button class="confirm-add">Add</button>
+            </div>
+            <button class="add-card">+ Add Card</button>
+        </div>
+
+        <!-- Column: In Progress -->
+        <div class="column">
+            <h2>In Progress</h2>
+            <div class="task-list"></div>
+            <p class="empty-state">No tasks yet</p>
+            <div class="add-card-form hidden">
+                <input type="text" placeholder="Enter task..." class="new-task-input" />
+                <button class="confirm-add">Add</button>
+            </div>
+            <button class="add-card">+ Add Card</button>
+        </div>
+
+        <!-- Column: Done -->
+        <div class="column">
+            <h2>Done</h2>
+            <div class="task-list"></div>
+            <p class="empty-state">No tasks yet</p>
+            <div class="add-card-form hidden">
+                <input type="text" placeholder="Enter task..." class="new-task-input" />
+                <button class="confirm-add">Add</button>
+            </div>
+            <button class="add-card">+ Add Card</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Kanbanly – All rights reserved.</p>
+    </footer>
+
+    <script src="file.js"></script>
+</body>
+
+</html>
